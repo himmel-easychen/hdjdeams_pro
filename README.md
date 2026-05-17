@@ -1,4 +1,4 @@
-# `zero-one-eams`
+# `hdjd-eams-pro`
 
 教务管理相关概念参考：
 
@@ -7,35 +7,17 @@
 
 ## 项目简介
 
-零壹教务管理系统是一套支持私有化部署的教培行业教务管理系统，专为教培行业提供云化管理解决方案，是一套微服务项目。
+hdjdeams-pro是致力于突破hdjd选课时出现的高并发等业务常见问题，所做出的系统原型
 
-系统在功能上注重教务管理，具有灵活的排课、消课等核心业务功能；系统采用稳定的微服务架构开发，运行流畅，易于部署扩展，支持私有化部署。应用端包括PC管理端、老师手机端、家长手机端。
-
- 核心功能
-
--  学生管理、跟进
--  课程管理、班级、科目等教务管理
--  报名管理、预约管理、体验卡
--  排课、课表
--  家长互动：学评教、教评学、作业、成绩发布
--  消课：课堂点名、随到随学、消课次数自定义，支持二维码签到
--  在线购课
--  支持预约模式
--  物料管理
--  财务管理：报名审核，课酬统计等
--  促学模块：积分商城、老师点评送积分、积分换礼品
--  组织人员管理、职位管理、角色管理、权限管理、数据权限管理
--  系统数据统计
--  `Uniapp`的家长端和老师端
 
 ## 系统架构图
 
-项目主体骨架基于`Spring Cloud Alibaba`生态体系，使用`MySQL`进行数据持久化管理，采用`Vue3`生态体系与`Element Puls UI`框架完成前端制作，同时项目提供`C++`微服务开发解决方案与集成、使用`Jenkins`实现`CD/CI`。
+项目主体骨架基于`Spring Cloud Alibaba`生态体系，使用`MySQL`进行数据持久化管理，redis、Kafka来进行缓存与高并发处理，采用`Vue3`生态体系与`Element Puls UI`框架完成前端制作、使用`Jenkins`实现`CD/CI`。
 
 ![architecture](./documents/00、preview-pic/architecture.jpg)
 
 ## 项目结构说明
-> `zero-one-eams`  
+> `hdjdeams`  
 >
 > > `.gitignore` -- 忽略提交配置
 > >
@@ -207,43 +189,10 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 | `MongoDB`   | 4.4.17                                                       | https://www.mongodb.com/try/download/community               |
 | `Jenkins`   | latest                                                       | https://www.jenkins.io/zh/doc/book/installing/               |
 
-## 效果预览图
-
-### PC管理端
-
-![](./documents/00、preview-pic/01.png)
-
-![](./documents/00、preview-pic/02.png)
-
-![](./documents/00、preview-pic/03.png)
-
-![](./documents/00、preview-pic/04.png)
-
-![](./documents/00、preview-pic/05.png)
-
-### 移动教师端
-
-![](./documents/00、preview-pic/06.png)
-
-![](./documents/00、preview-pic/07.png)
-
-![](./documents/00、preview-pic/08.png)
-
-![](./documents/00、preview-pic/09.png)
-
-### 移动学生端
-
-![](./documents/00、preview-pic/10.png)
-
-![](./documents/00、preview-pic/11.png)
-
-![](./documents/00、preview-pic/12.png)
-
-![](./documents/00、preview-pic/13.png)
 
 ## 特别鸣谢
 
-`zero-one-eams`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
+`hdjdeams`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
 
 - `spring`：https://github.com/spring-projects
 - `alibaba`：https://github.com/alibaba
