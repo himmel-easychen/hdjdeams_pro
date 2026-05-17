@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.oauth2.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.zeroone.star.oauth2.entity.Role">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+        <result column="description" jdbcType="VARCHAR" property="description" />
+    </resultMap>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT r.id, r.name, r.code AS keyword, NULL AS description
+        FROM sys_role r
+        INNER JOIN sys_user_role ur ON r.id = ur.role_id
+        WHERE ur.user_id = #{userId}
+    </select>
+
+    <select id="selectByMenuPath" resultMap="BaseResultMap">
+        SELECT DISTINCT r.id, r.name, r.code AS keyword, NULL AS description
+        FROM sys_role r
+        INNER JOIN sys_role_permission rp ON r.id = rp.role_id
+        INNER JOIN sys_permission p ON rp.permission_id = p.id
+        WHERE p.url = #{path}
+          AND p.enabled = 1
+    </select>
+</mapper>
